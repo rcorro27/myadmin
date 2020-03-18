@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <title>index.php</title>
 
@@ -45,7 +46,7 @@ mysqli_close($mysqli);
 
 ?>
     <div class="container">
-        <i class="fas fa-pen-square"></i>
+
 
         <ul class="thead-dark">
             <li>MySQL User Form</li>
@@ -77,7 +78,9 @@ mysqli_close($mysqli);
                 </td>
                 <td><?=$userinfo['modificationDate']; ?>
                 </td>
-                <td><i class="fas fa-pen-square"></i></td>
+                <td><i class="fas fa-pen-square"></i>
+                    <i class="fas fa-minus-square"></i>
+                </td>
             </tr>
 
             <?php endforeach; ?>

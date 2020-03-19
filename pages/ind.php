@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <title>index.php</title>
 
@@ -19,26 +18,29 @@ $user = 'root';
 $pass = '';
 $db = 'programmation-web-3';
 $mysqli = mysqli_connect($host, $user, $pass, $db, $port);*/
-require_once 'conection.php';
+session_start();
 
-$sql = 'SELECT * FROM `tp_user`';
+if (!isset($_SESSION['User'])) {
+    header('location:index.php');
+} else {
+    require_once 'conection.php';
 
-$result = mysqli_query($mysqli, $sql);
+    $sql = 'SELECT * FROM `tp_user`';
 
-if (!$result) {
-    $error = mysqli_error($mysqli);
-}
+    $result = mysqli_query($mysqli, $sql);
 
-$usager = [];
-while ($listusagers = mysqli_fetch_assoc($result)) {
-    array_push($usager, $listusagers);
-}
+    if (!$result) {
+        $error = mysqli_error($mysqli);
+    }
 
-mysqli_free_result($result);
+    $usager = [];
+    while ($listusagers = mysqli_fetch_assoc($result)) {
+        array_push($usager, $listusagers);
+    }
 
-mysqli_close($mysqli);
+    mysqli_free_result($result);
 
-?>
+    mysqli_close($mysqli); ?>
     <div class="container">
 
 
@@ -74,10 +76,8 @@ mysqli_close($mysqli);
                     <td><?=$userinfo['modificationDate']; ?>
                     </td>
                     <td>
-                        <a href="modifier.php?id=<?php echo $userinfo['id']; ?>"
-                            class="fas fa-pen-square"></a>
-                        <a href="actions.php?id=<?php echo $userinfo['id']; ?>"
-                            class="fas fa-minus-square"></a>
+                        <a href="modifier.php?id=<?php echo $userinfo['id']; ?>" class="fas fa-pen-square"></a>
+                        <a href="actions.php?id=<?php echo $userinfo['id']; ?>" class="fas fa-minus-square"></a>
                     </td>
                 </tr>
             </form>
@@ -90,3 +90,5 @@ mysqli_close($mysqli);
 </body>
 
 </html>
+<?php
+}

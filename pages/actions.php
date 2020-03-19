@@ -25,7 +25,7 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 1) {
     $userName = $_REQUEST['username'];
     $password = password_hash($_REQUEST['password'], PASSWORD_BCRYPT);
     /* SINTAXE A REGLERRRR*/
-    $ajouterSql = "UPDATE tp_user SET firstName='$prenom',lastName='$nom',email='$courriel',userName='$userName',userPassword='$password' WHERE id='$id'";
+    $ajouterSql = "UPDATE tp_user SET firstName='$prenom',lastName='$nom',email='$courriel',userName='$userName',userPassword='$password' WHERE id=$id";
 
     mysqli_query($mysqli, $ajouterSql);
     if (mysqli_connect_errno()) {

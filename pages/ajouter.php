@@ -1,6 +1,6 @@
 <?php
 require_once 'conection.php';
-$valueInfo;
+$valueInfo = null;
 if (isset($_REQUEST['id'])) {
     $id = $_REQUEST['id'];
     $sqlupdate = "SELECT * from tp_user WHERE email like '$id'";

@@ -17,8 +17,6 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 1) {
         exit;
     }
     header('Location: ind.php');
-} elseif (condition) {
-    // code...
 } else {
     $id = $_REQUEST['id'];
     $sqlDelete = "DELETE FROM  tp_user  WHERE id=$id";

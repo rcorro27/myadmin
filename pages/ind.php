@@ -44,7 +44,7 @@ mysqli_close($mysqli);
 
         <ul class="">
             <li>MySQL User Form</li>
-            <li><a href="form.php">ajouter</a></li>
+            <li><a href="ajouter.php">ajouter</a></li>
         </ul>
 
 
@@ -74,7 +74,7 @@ mysqli_close($mysqli);
                     <td><?=$userinfo['modificationDate']; ?>
                     </td>
                     <td>
-                        <a href="ajouter.php?id=<?php echo $userinfo['id']; ?>"
+                        <a href="modifier.php?id=<?php echo $userinfo['id']; ?>"
                             class="fas fa-pen-square"></a>
                         <a href="actions.php?id=<?php echo $userinfo['id']; ?>"
                             class="fas fa-minus-square"></a>

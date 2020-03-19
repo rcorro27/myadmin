@@ -17,6 +17,15 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 1) {
         exit;
     }
     header('Location: ind.php');
+} elseif (isset($id)) {
+    $id = $_REQUEST['id'];
+    $sqlupdate = "SELECT * from tp_user WHERE id=$id";
+    $result = mysqli_query($mysqli, $sqlupdate);
+    if (mysqli_connect_errno()) {
+        echo 'Erreur de connection au serveur MySQL: ('.$mysqli->connect_errno.') '.$mysqli->connect_error;
+        exit;
+    }
+    $valueInfo = mysqli_fetch_assoc($result);
 } else {
     $id = $_REQUEST['id'];
     $sqlDelete = "DELETE FROM  tp_user  WHERE id=$id";

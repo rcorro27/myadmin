@@ -22,7 +22,7 @@ $mysqli = mysqli_connect($host, $user, $pass, $db, $port);*/
 session_start();
 
 if (!isset($_SESSION['User'])) {
-    header('location:index.php');
+    header('location:login.php');
 } else {
     require_once 'conection.php';
 
@@ -59,7 +59,7 @@ if (!isset($_SESSION['User'])) {
                 <th scope="col">Courriel</th>
                 <th scope="col">Date de creation</th>
                 <th scope="col">Date de modification</th>
-                <th scope="col"></th>
+                <th scope="col"> </th>
             </tr>
 
             <?php foreach ($usager as $userinfo): ?>
@@ -76,17 +76,11 @@ if (!isset($_SESSION['User'])) {
                     </td>
                     <td><?=$userinfo['modificationDate']; ?>
                     </td>
-
-                    <a href="modifier.php?id=<?php echo $userinfo['id']; ?>"
-                        class="fas fa-pen-square"></a>
-                    <a href="actions.php?id=<?php echo $userinfo['id']; ?>"
-                        class="fas fa-minus-square"></a>
-
-                    <a href="ajouter.php?id=<?php echo $userinfo['email']; ?>"
-                        class="fas fa-pen-square"></a>
-                    <a href="actions.php?id=<?php echo $userinfo['id']; ?>"
-                        class="fas fa-minus-square"></a>
-
+                    <td>
+                        <a href="ajouter.php?id=<?php echo $userinfo['email']; ?>"
+                            class="fas fa-pen-square"></a>
+                        <a href="actions.php?id=<?php echo $userinfo['id']; ?>"
+                            class="fas fa-minus-square"></a>
                     </td>
                 </tr>
             </form>

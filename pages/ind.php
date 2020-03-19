@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <title>index.php</title>
 
@@ -21,7 +22,7 @@ $mysqli = mysqli_connect($host, $user, $pass, $db, $port);*/
 session_start();
 
 if (!isset($_SESSION['User'])) {
-    header('location:index.php');
+    header('location:login.php');
 } else {
     require_once 'conection.php';
 
@@ -58,7 +59,7 @@ if (!isset($_SESSION['User'])) {
                 <th scope="col">Courriel</th>
                 <th scope="col">Date de creation</th>
                 <th scope="col">Date de modification</th>
-                <th scope="col"></th>
+                <th scope="col"> </th>
             </tr>
 
             <?php foreach ($usager as $userinfo): ?>
@@ -75,13 +76,11 @@ if (!isset($_SESSION['User'])) {
                     </td>
                     <td><?=$userinfo['modificationDate']; ?>
                     </td>
-
-                    <a href="modifier.php?id=<?php echo $userinfo['id']; ?>" class="fas fa-pen-square"></a>
-                    <a href="actions.php?id=<?php echo $userinfo['id']; ?>" class="fas fa-minus-square"></a>
-
-                    <a href="ajouter.php?id=<?php echo $userinfo['email']; ?>" class="fas fa-pen-square"></a>
-                    <a href="actions.php?id=<?php echo $userinfo['id']; ?>" class="fas fa-minus-square"></a>
-
+                    <td>
+                        <a href="ajouter.php?id=<?php echo $userinfo['email']; ?>"
+                            class="fas fa-pen-square"></a>
+                        <a href="actions.php?id=<?php echo $userinfo['id']; ?>"
+                            class="fas fa-minus-square"></a>
                     </td>
                 </tr>
             </form>

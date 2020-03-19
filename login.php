@@ -28,12 +28,7 @@
                     <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password">
                 </div>
             </div>
-            <fieldset class="form-group">
-                <div class="row">
-                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
 
-                </div>
-            </fieldset>
 
             <div class="form-group row">
                 <div class="col-sm-10">

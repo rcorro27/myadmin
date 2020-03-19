@@ -13,21 +13,15 @@
 
 <body>
     <?php
-$port = 3308;
+/*$port = 3308;
 $host = 'localhost';
 $user = 'root';
 $pass = '';
 $db = 'programmation-web-3';
-$mysqli = mysqli_connect($host, $user, $pass, $db, $port);
+$mysqli = mysqli_connect($host, $user, $pass, $db, $port);*/
+require_once 'conection.php';
 
-mysqli_set_charset($mysqli, 'utf8');
-
-if (mysqli_connect_errno()) {
-    echo 'Erreur de connection au serveur MySQL: ('.$mysqli->connect_errno.') '.$mysqli->connect_error;
-    exit;
-}
-
-$sql = 'SELECT * FROM `tp_user` WHERE userName="admin"';
+$sql = 'SELECT * FROM `tp_user`';
 
 $result = mysqli_query($mysqli, $sql);
 
@@ -48,7 +42,7 @@ mysqli_close($mysqli);
     <div class="container">
 
 
-        <ul class="thead-dark">
+        <ul class="">
             <li>MySQL User Form</li>
             <li><a href="form.php">ajouter</a></li>
         </ul>
@@ -66,22 +60,27 @@ mysqli_close($mysqli);
             </tr>
 
             <?php foreach ($usager as $userinfo): ?>
-            <tr>
+            <form action="actions.php" method="post">
+                <tr>
 
-                <td><?=$userinfo['firstName']; ?>
-                </td>
-                <td><?=$userinfo['lastName']; ?>
-                </td>
-                <td><?=$userinfo['email']; ?>
-                </td>
-                <td><?=$userinfo['creationDate']; ?>
-                </td>
-                <td><?=$userinfo['modificationDate']; ?>
-                </td>
-                <td><i class="fas fa-pen-square"></i>
-                    <i class="fas fa-minus-square"></i>
-                </td>
-            </tr>
+                    <td><?=$userinfo['firstName']; ?>
+                    </td>
+                    <td><?=$userinfo['lastName']; ?>
+                    </td>
+                    <td><?=$userinfo['email']; ?>
+                    </td>
+                    <td><?=$userinfo['creationDate']; ?>
+                    </td>
+                    <td><?=$userinfo['modificationDate']; ?>
+                    </td>
+                    <td>
+                        <a href="ajouter.php?id=<?php echo $userinfo['id']; ?>"
+                            class="fas fa-pen-square"></a>
+                        <a href="actions.php?id=<?php echo $userinfo['id']; ?>"
+                            class="fas fa-minus-square"></a>
+                    </td>
+                </tr>
+            </form>
 
             <?php endforeach; ?>
 

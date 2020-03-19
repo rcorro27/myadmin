@@ -75,9 +75,13 @@ if (!isset($_SESSION['User'])) {
                     </td>
                     <td><?=$userinfo['modificationDate']; ?>
                     </td>
-                    <td>
-                        <a href="modifier.php?id=<?php echo $userinfo['id']; ?>" class="fas fa-pen-square"></a>
-                        <a href="actions.php?id=<?php echo $userinfo['id']; ?>" class="fas fa-minus-square"></a>
+
+                    <a href="modifier.php?id=<?php echo $userinfo['id']; ?>" class="fas fa-pen-square"></a>
+                    <a href="actions.php?id=<?php echo $userinfo['id']; ?>" class="fas fa-minus-square"></a>
+
+                    <a href="ajouter.php?id=<?php echo $userinfo['email']; ?>" class="fas fa-pen-square"></a>
+                    <a href="actions.php?id=<?php echo $userinfo['id']; ?>" class="fas fa-minus-square"></a>
+
                     </td>
                 </tr>
             </form>

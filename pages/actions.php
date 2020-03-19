@@ -3,10 +3,10 @@
 require_once 'conection.php';
 
 if (isset($_POST['ajouter']) && $_POST['ajouter'] == 1) {
-    $prenom = $_REQUEST['firstname'];
-    $nom = $_REQUEST['lastname'];
-    $courriel = $_REQUEST['email'];
-    $userName = $_REQUEST['username'];
+    $prenom = $_POST['firstname'];
+    $nom = $_POST['lastname'];
+    $courriel = $_POST['email'];
+    $userName = $_POST['username'];
     $password = password_hash($_REQUEST['password'], PASSWORD_BCRYPT);
 
     $ajouterSql = "INSERT INTO tp_user (firstName, lastName, email, userName, userPassword)

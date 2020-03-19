@@ -8,8 +8,8 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 1) {
     $userName = $_REQUEST['username'];
     $password = password_hash($_REQUEST['password'], PASSWORD_BCRYPT);
 
-    $ajouterSql = "INSERT INTO tp_user ('firstName', 'lastName', 'email', 'userName', 'userPassword')
-    VALUES ('$prenom', '$nom', '$courriel', '$userName', '$password')";
+    $ajouterSql = "INSERT INTO tp_user (firstName, lastName, email, userName, userPassword)
+    VALUES ('$prenom', '$nom', '$courriel', '$userName', '$password');";
 
     mysqli_query($mysqli, $ajouterSql);
     if (mysqli_connect_errno()) {

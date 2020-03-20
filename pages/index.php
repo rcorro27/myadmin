@@ -17,6 +17,27 @@
 </head>
 
 <body>
+    <div class="form">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">MySql user Form</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="form.php"">Ajouter <span class=" sr-only">(current)</span></a>
+                    </li>
+
+
+                </ul>
+                <span class="navbar-text">
+
+                    <a class="nav-link" href="logout.php?logout">Log Out</a>
+
+                </span>
+            </div>
+    </div>
 
     <?php $port = 3306;
     $host = 'localhost';
@@ -53,10 +74,6 @@
     <div class="container">
 
 
-        <ul class="thead-dark">
-            <li>MySQL User Form</li>
-            <li><a href="form.php">ajouter</a></li>
-        </ul>
 
 
         <table class="table table-bordered">

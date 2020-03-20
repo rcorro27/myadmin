@@ -36,10 +36,11 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 1) {
          exit;
      }
      header('Location: index.php');
- } else {
-     $id = $_REQUEST['id'];
+ } if (isset($_GET['supprimer'])) {
+     $id = $_GET['supprimer'];
+
      $sqlDelete = "DELETE FROM  tp_user  WHERE id=$id";
-     $result = mysqli_query($mysqli, $sqlDelete);
+     $result = mysqli_query($con, $sqlDelete);
      if (mysqli_connect_errno()) {
          echo 'Erreur de connection au serveur MySQL: ('.$mysqli->connect_errno.') '.$mysqli->connect_error;
          exit;

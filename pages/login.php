@@ -15,7 +15,7 @@
         <p class="lead">L'usager par defaut est <strong>username:admin</strong> et <strong>password:admin</strong>
         </p>
         <hr class="my-4">
-        <form method="post" action="testing.php">
+        <form method="post" action="server.php">
             <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
                 <div class="col-sm-10">

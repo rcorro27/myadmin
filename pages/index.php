@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <title>index.php</title>
 
@@ -47,7 +46,7 @@ if (!isset($_SESSION['User'])) {
 
         <ul class="">
             <li>MySQL User Form</li>
-            <li><a href="ajouter.php">ajouter</a></li>
+            <li><a href="form.php">ajouter</a></li>
         </ul>
 
 
@@ -77,10 +76,8 @@ if (!isset($_SESSION['User'])) {
                     <td><?=$userinfo['modificationDate']; ?>
                     </td>
                     <td>
-                        <a href="ajouter.php?id=<?php echo $userinfo['email']; ?>"
-                            class="fas fa-pen-square"></a>
-                        <a href="actions.php?id=<?php echo $userinfo['id']; ?>"
-                            class="fas fa-minus-square"></a>
+                        <a href="form.php?id=<?php echo $userinfo['email']; ?>" class="fas fa-pen-square"></a>
+                        <a href="actions.php?id=<?php echo $userinfo['id']; ?>" class="fas fa-minus-square"></a>
                     </td>
                 </tr>
             </form>

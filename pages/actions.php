@@ -17,7 +17,7 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 1) {
         echo 'Erreur de connection au serveur MySQL: ('.$mysqli->connect_errno.') '.$mysqli->connect_error;
         exit;
     }
-    header('Location: ind.php');
+    header('Location: index.php');
 }
  if (isset($_POST['Modifier'])) {
      $id = $_POST['id'];
@@ -35,7 +35,7 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 1) {
          echo 'Erreur de connection au serveur MySQL: ('.$mysqli->connect_errno.') '.$mysqli->connect_error;
          exit;
      }
-     header('Location: ind.php');
+     header('Location: index.php');
  } else {
      $id = $_REQUEST['id'];
      $sqlDelete = "DELETE FROM  tp_user  WHERE id=$id";
@@ -44,5 +44,5 @@ if (isset($_POST['ajouter']) && $_POST['ajouter'] == 1) {
          echo 'Erreur de connection au serveur MySQL: ('.$mysqli->connect_errno.') '.$mysqli->connect_error;
          exit;
      }
-     header('Location: ind.php');
+     header('Location: index.php');
  }
